@@ -1,0 +1,2479 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Profesional - Naufal F.A</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --bg-cream: #FAF6F0;
+      --card-cream: #FFFDF9;
+      --border-cream: #EFE6D8;
+      --teal-primary: #5A9E98;
+      --teal-light: #E4F1F0;
+      --teal-hover: #48837E;
+      --text-main: #1A2523;
+      --text-muted: #485754;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+      --radius: 16px;
+      --danger: #e74c3c;
+      --success: #2ecc71;
+    }
+
+    /* Dark Mode Variable Overrides - Neutral Dark Charcoal & Slate Gray Theme */
+    body.dark-theme {
+      --bg-cream: #141417;
+      --card-cream: #222226;
+      --border-cream: #3A3A42;
+      --teal-primary: #52C4B8;
+      --teal-light: #2A2A30;
+      --teal-hover: #72EADF;
+      --text-main: #F4F4F6;
+      --text-muted: #B0B0BC;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.85);
+    }
+
+    body.dark-theme .project-tag {
+      background: #2A2A32;
+      color: #72EADF;
+      border: 1px solid rgba(114, 234, 223, 0.35);
+    }
+
+    body.dark-theme .filter-btn {
+      background: #222226;
+      color: #B0B0BC;
+      border-color: #3A3A42;
+    }
+
+    body.dark-theme .filter-btn.active, 
+    body.dark-theme .filter-btn:hover {
+      background: var(--teal-primary);
+      color: #141417;
+      border-color: var(--teal-hover);
+      font-weight: 800;
+    }
+
+    body.dark-theme .skill-tag {
+      background-color: #222226;
+      color: #FFFFFF;
+      border-color: #3A3A42;
+    }
+
+    body.dark-theme .skill-tag:hover, 
+    body.dark-theme .skill-tag.active {
+      background-color: var(--teal-primary);
+      color: #141417;
+      font-weight: 700;
+    }
+
+    body.dark-theme .btn-secondary {
+      background-color: #2A2A30;
+      color: #FFFFFF;
+      border-color: #3A3A42;
+    }
+
+    body.dark-theme .btn-secondary:hover {
+      background-color: #35353D;
+      color: #72EADF;
+      border-color: #52C4B8;
+    }
+
+    body.dark-theme .form-control {
+      background: #19191C;
+      border-color: #3A3A42;
+      color: #FFFFFF;
+    }
+
+    body.dark-theme .form-control::placeholder {
+      color: #8E8E9A;
+    }
+
+    #project-form-container {
+      background: var(--teal-light);
+      border: 1px solid var(--border-cream);
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 12px;
+    }
+
+    body.dark-theme #project-form-container {
+      background: #19191C;
+      border-color: #3A3A42;
+    }
+
+    body.dark-theme select.form-control option {
+      background-color: #1E1E22;
+      color: #FFFFFF;
+    }
+
+    body.dark-theme .form-control::placeholder {
+      color: #92BDB5;
+    }
+
+    #project-form-container {
+      background: var(--teal-light);
+      border: 1px solid var(--border-cream);
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 12px;
+    }
+
+    body.dark-theme #project-form-container {
+      background: #0A1614;
+      border-color: #284742;
+    }
+
+    body.dark-theme select.form-control option {
+      background-color: #0E1A18;
+      color: #FFFFFF;
+    }
+
+    /* Mobile Nav Hamburger Menu Button */
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border-cream);
+      color: var(--text-main);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .nav-menu-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    @media (max-width: 767px) {
+      .mobile-menu-btn {
+        display: flex;
+      }
+
+      .nav-menu-wrapper {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--card-cream);
+        border-bottom: 1px solid var(--border-cream);
+        flex-direction: column;
+        padding: 16px;
+        gap: 14px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        display: none;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+
+      body.dark-theme .nav-menu-wrapper {
+        background: rgba(18, 34, 31, 0.98);
+        border-color: #284742;
+      }
+
+      .nav-menu-wrapper.active {
+        display: flex;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 8px 12px;
+        width: 100%;
+      }
+
+      .admin-btn-trigger {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 16px;
+      }
+    }
+
+    /* Live Preview Device Frame Styling */
+    .preview-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 14px;
+      background: var(--card-cream);
+      border: 1px solid var(--border-cream);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .device-btn-group {
+      display: flex;
+      gap: 6px;
+    }
+
+    .device-btn {
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border: 1px solid var(--border-cream);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .device-btn.active, .device-btn:hover {
+      background: var(--teal-primary);
+      color: white;
+      border-color: var(--teal-primary);
+    }
+
+    .preview-viewport-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background: rgba(0, 0, 0, 0.05);
+      padding: 16px 8px;
+      border-radius: 16px;
+      border: 1px dashed var(--border-cream);
+      min-height: 520px;
+      overflow-x: auto;
+    }
+
+    body.dark-theme .preview-viewport-container {
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .preview-device-screen {
+      background: var(--bg-cream);
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      border: 4px solid #2d3748;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 100%;
+      max-width: 100%;
+      height: 600px;
+      margin: 0 auto;
+    }
+
+    .preview-device-screen.device-mobile {
+      width: 375px;
+      max-width: 100%;
+      height: 620px;
+      border-radius: 24px;
+      border-width: 8px;
+    }
+
+    .preview-device-screen.device-tablet {
+      width: 680px;
+      max-width: 100%;
+      height: 620px;
+      border-radius: 20px;
+      border-width: 6px;
+    }
+
+    .preview-device-screen.device-desktop {
+      width: 100%;
+      height: 600px;
+      border-radius: 12px;
+      border-width: 4px;
+    }
+
+    .preview-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: transparent;
+    }
+
+    /* Fullscreen Preview Overlay Styling */
+    .preview-viewport-container.is-fullscreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 9999;
+      border-radius: 0;
+      padding: 0;
+      background: #000;
+      border: none;
+    }
+
+    .preview-viewport-container.is-fullscreen .preview-device-screen {
+      width: 100% !important;
+      height: 100% !important;
+      max-width: 100% !important;
+      border-radius: 0 !important;
+      border: none !important;
+    }
+
+    .fullscreen-exit-btn {
+      display: none;
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      z-index: 10000;
+      background: rgba(15, 23, 21, 0.85);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      transition: all 0.2s ease;
+    }
+
+    .fullscreen-exit-btn:hover {
+      background: var(--teal-primary);
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    .preview-viewport-container.is-fullscreen .fullscreen-exit-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-cream);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 60px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .container {
+      width: 100%;
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      background: rgba(250, 246, 240, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(90, 158, 152, 0.2);
+      padding: 14px 0;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-theme .header {
+      background: rgba(20, 20, 23, 0.92);
+      border-bottom-color: rgba(58, 58, 66, 0.5);
+    }
+
+    /* Enhanced Sticky Header when Scrolled */
+    .header.scrolled {
+      padding: 8px 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      background: rgba(250, 246, 240, 0.97);
+    }
+
+    body.dark-theme .header.scrolled {
+      background: rgba(20, 20, 23, 0.97);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: #3B726D;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    body.dark-theme .logo {
+      color: #7CC2BB;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .theme-toggle-btn {
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--text-main);
+      border: 1px solid var(--border-cream);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .theme-toggle-btn:hover {
+      background: var(--teal-light);
+      color: var(--teal-primary);
+      transform: scale(1.08);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+      padding: 4px 8px;
+      border-radius: 8px;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--teal-hover);
+      background-color: var(--teal-light);
+    }
+
+    .admin-btn-trigger {
+      background: #3B726D;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 10px rgba(59, 114, 109, 0.25);
+    }
+
+    body.dark-theme .admin-btn-trigger {
+      background: #2C5753;
+    }
+
+    .admin-btn-trigger:hover {
+      background: var(--teal-hover);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      padding: 32px 20px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      text-align: center;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-cream);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    /* Preset Gradient Hero Section - Enhanced Specificity & Colors */
+    .hero.grad-teal-breeze {
+      background: linear-gradient(135deg, rgba(228, 241, 240, 0.95) 0%, rgba(255, 253, 249, 0.95) 50%, rgba(90, 158, 152, 0.35) 100%) !important;
+    }
+    body.dark-theme .hero.grad-teal-breeze {
+      background: linear-gradient(135deg, rgba(30, 30, 35, 0.95) 0%, rgba(20, 20, 23, 0.95) 50%, rgba(82, 196, 184, 0.35) 100%) !important;
+    }
+
+    .hero.grad-sunset-glow {
+      background: linear-gradient(135deg, rgba(255, 235, 220, 0.95) 0%, rgba(255, 253, 249, 0.95) 50%, rgba(230, 110, 40, 0.38) 100%) !important;
+    }
+    body.dark-theme .hero.grad-sunset-glow {
+      background: linear-gradient(135deg, rgba(45, 25, 20, 0.95) 0%, rgba(20, 20, 23, 0.95) 50%, rgba(230, 95, 30, 0.45) 100%) !important;
+    }
+
+    .hero.grad-sunset-glow {
+      background: linear-gradient(135deg, rgba(255, 235, 220, 0.95) 0%, rgba(255, 253, 249, 0.95) 50%, rgba(230, 110, 40, 0.38) 100%) !important;
+    }
+    body.dark-theme .hero.grad-sunset-glow {
+      background: linear-gradient(135deg, rgba(60, 25, 12, 0.95) 0%, rgba(25, 14, 10, 0.95) 50%, rgba(230, 95, 30, 0.45) 100%) !important;
+    }
+
+    .hero.grad-aurora-mint {
+      background: linear-gradient(135deg, rgba(215, 248, 225, 0.95) 0%, rgba(255, 253, 249, 0.95) 50%, rgba(46, 204, 113, 0.38) 100%) !important;
+    }
+    body.dark-theme .hero.grad-aurora-mint {
+      background: linear-gradient(135deg, rgba(15, 48, 26, 0.95) 0%, rgba(10, 25, 15, 0.95) 50%, rgba(46, 204, 113, 0.45) 100%) !important;
+    }
+
+    .hero.grad-deep-ocean {
+      background: linear-gradient(135deg, rgba(210, 235, 255, 0.95) 0%, rgba(255, 253, 249, 0.95) 50%, rgba(41, 128, 185, 0.38) 100%) !important;
+    }
+    body.dark-theme .hero.grad-deep-ocean {
+      background: linear-gradient(135deg, rgba(12, 35, 58, 0.95) 0%, rgba(10, 20, 32, 0.95) 50%, rgba(52, 152, 219, 0.45) 100%) !important;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 20px;
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--teal-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid var(--card-cream);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background-color: var(--teal-light);
+      color: var(--teal-primary);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero h1 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto 24px;
+      font-weight: 500;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--teal-primary);
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--teal-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--card-cream);
+      color: var(--text-main);
+      border: 1px solid var(--border-cream);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--teal-primary);
+      color: var(--teal-primary);
+    }
+
+    .btn-danger {
+      background-color: var(--danger);
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background-color: #c0392b;
+    }
+
+    .section {
+      padding: 20px 0;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      position: relative;
+      color: var(--text-main);
+      display: inline-block;
+      padding: 8px 18px;
+      background: var(--card-cream);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 12px;
+      border: 1px solid var(--border-cream);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    body.dark-theme .section-title {
+      color: #FFFFFF;
+      background: rgba(34, 34, 38, 0.95);
+      border-color: #3A3A42;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      background-color: var(--card-cream);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-cream);
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      user-select: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-tag:hover, .skill-tag.active {
+      background-color: var(--teal-primary);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(90, 158, 152, 0.4);
+    }
+
+    .filter-btn-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--border-cream);
+      background: var(--card-cream);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--teal-primary);
+      color: #fff;
+      border-color: var(--teal-primary);
+    }
+
+    .project-card {
+      background-color: var(--card-cream);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-cream);
+      border-radius: var(--radius);
+      padding: 22px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+      border-color: var(--teal-primary);
+    }
+
+    .project-card h3 {
+      font-size: 1.15rem;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .project-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .project-tag {
+      font-size: 0.75rem;
+      color: var(--teal-primary);
+      font-weight: 700;
+      background: var(--teal-light);
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    .contact-card {
+      background: var(--card-cream);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+      border: 1px solid var(--border-cream);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h3 {
+      margin-bottom: 8px;
+      color: var(--text-main);
+      font-size: 1.25rem;
+    }
+
+    .contact-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 21, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: var(--card-cream);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 540px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-cream);
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+
+    body.dark-theme .modal-card {
+      background: #1C1C20;
+    }
+
+    /* Full Screen CMS Modal & Vertical Sidebar Layout */
+    #dashboard-modal.modal-overlay {
+      padding: 0;
+    }
+
+    #dashboard-modal .modal-card {
+      width: 100vw;
+      height: 100vh;
+      max-width: 100vw;
+      max-height: 100vh;
+      border-radius: 0;
+      padding: 0;
+      border: none;
+      transform: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cms-container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    @media (min-width: 768px) {
+      .cms-container {
+        flex-direction: row;
+      }
+    }
+
+    .cms-sidebar {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid var(--border-cream);
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .cms-sidebar {
+        width: 260px;
+        min-width: 260px;
+        height: 100%;
+        border-bottom: none;
+        border-right: 1px solid var(--border-cream);
+        padding: 24px 20px;
+      }
+    }
+
+    body.dark-theme .cms-sidebar {
+      background: #141417;
+      border-color: #3A3A42;
+    }
+
+    .admin-tabs {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+      overflow-x: auto;
+    }
+
+    @media (min-width: 768px) {
+      .admin-tabs {
+        flex-direction: column;
+        overflow-x: visible;
+      }
+    }
+
+    .admin-tab {
+      padding: 12px 16px;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .admin-tab:hover {
+      background: var(--teal-light);
+      color: var(--teal-primary);
+    }
+
+    .admin-tab.active {
+      background: var(--teal-primary);
+      color: white;
+      box-shadow: 0 4px 12px rgba(90, 158, 152, 0.3);
+    }
+
+    .cms-main-content {
+      flex: 1;
+      padding: 24px;
+      overflow-y: auto;
+      max-width: 900px;
+    }
+
+    @media (min-width: 768px) {
+      .cms-main-content {
+        padding: 32px 40px;
+      }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--teal-light);
+      padding-bottom: 12px;
+    }
+
+    .modal-header h2 {
+      font-size: 1.3rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .close-modal {
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border-cream);
+      background: var(--card-cream);
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      transition: border-color 0.2s ease;
+    }
+
+    body.dark-theme .form-control {
+      background: #0E1A18;
+      border-color: #26423D;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--teal-primary);
+      box-shadow: 0 0 0 3px rgba(90, 158, 152, 0.2);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .admin-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-cream);
+      padding-bottom: 10px;
+      overflow-x: auto;
+    }
+
+    .admin-tab {
+      padding: 8px 14px;
+      background: var(--teal-light);
+      border: none;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--teal-hover);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .admin-tab.active {
+      background: var(--teal-primary);
+      color: white;
+    }
+
+    .admin-section {
+      display: none;
+    }
+
+    .admin-section.active {
+      display: block;
+    }
+
+    .item-list-admin {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .item-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      background: var(--card-cream);
+      border: 1px solid var(--border-cream);
+      border-radius: 10px;
+      margin-bottom: 8px;
+    }
+
+    body.dark-theme .item-row {
+      background: #19191C;
+    }
+
+    .item-row-info {
+      flex: 1;
+      padding-right: 12px;
+    }
+
+    .item-row-info strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .item-row-info span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .item-actions {
+      display: flex;
+      gap: 6px;
+    }
+
+    .btn-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .btn-edit {
+      background: var(--teal-light);
+      color: var(--teal-primary);
+    }
+
+    .btn-duplicate {
+      background: #E8F4F8;
+      color: #2980B9;
+    }
+
+    body.dark-theme .btn-duplicate {
+      background: #1A364A;
+      color: #3498DB;
+    }
+
+    .btn-delete {
+      background: #FADBD8;
+      color: var(--danger);
+    }
+
+    body.dark-theme .btn-delete {
+      background: #411916;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #111B19;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 2000;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 40px;
+      border-top: 1px solid var(--border-cream);
+      padding-top: 24px;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    body.dark-theme .footer {
+      border-top-color: #3A3A42;
+      color: #B0B0BC;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .social-icon-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-icon-btn:hover {
+      background: var(--teal-primary);
+      color: #ffffff;
+      transform: translateY(-4px) scale(1.1);
+      border-color: var(--teal-hover);
+      box-shadow: 0 8px 20px rgba(90, 158, 152, 0.4);
+    }
+
+    @media (min-width: 640px) {
+      .container { max-width: 640px; }
+      .cta-group { flex-direction: row; justify-content: center; }
+      .btn { width: auto; }
+    }
+
+    @media (min-width: 768px) {
+      .container { max-width: 768px; }
+      .hero { padding: 50px 20px; }
+      .hero h1 { font-size: 2.25rem; }
+      .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .project-card { margin-bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="navbar">
+    <div class="container nav">
+      <a href="#" class="logo" id="logo-text">
+        <i class="fa-solid fa-leaf" style="color: var(--teal-primary)"></i> Naufal F.A
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()" title="Ganti Mode Tampilan (Dark/Light)">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Buka Menu">
+          <i class="fa-solid fa-bars" id="mobile-menu-icon"></i>
+        </button>
+        <div class="nav-menu-wrapper" id="nav-menu-wrapper">
+          <ul class="nav-links">
+            <li><a href="#about" onclick="closeMobileMenu()">Tentang</a></li>
+            <li><a href="#projects" onclick="closeMobileMenu()">Karya</a></li>
+            <li><a href="#contact" onclick="closeMobileMenu()">Kontak</a></li>
+          </ul>
+          <button class="admin-btn-trigger" id="open-admin-btn" onclick="toggleAdminView(); closeMobileMenu();">
+            <i class="fa-solid fa-lock"></i> Admin / CMS
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="hero">
+      <!-- Dynamic Hero rendered by JS -->
+    </section>
+
+    <section id="projects" class="section">
+      <h2 class="section-title"><i class="fa-solid fa-folder-open"></i> Karya Terpilih</h2>
+      <div class="filter-btn-group" id="filter-container">
+        <!-- Dynamic Filter Buttons rendered by JS -->
+      </div>
+
+      <div class="projects-grid" id="projects-container">
+        <!-- Dynamic Projects rendered by JS -->
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="contact-card" id="contact-container">
+        <!-- Dynamic Contact rendered by JS -->
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="social-links">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Dribbble">
+          <i class="fa-brands fa-dribbble"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Twitter / X">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </div>
+      <p>&copy; 2026 <span id="footer-name">Naufal F.A</span>. Mobile-First Experience.</p>
+      <button onclick="toggleAdminView()" style="background:none; border:none; color:rgba(255,255,255,0.8); font-size:0.75rem; cursor:pointer; text-decoration:underline;">
+        <i class="fa-solid fa-sliders"></i> Mode Kelola Backend
+      </button>
+    </footer>
+  </main>
+
+  <div class="modal-overlay" id="login-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-shield-halved" style="color:var(--teal-primary);"></i> Admin Login</h2>
+        <button class="close-modal" onclick="closeModal('login-modal')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label><i class="fa-solid fa-user"></i> Username</label>
+          <input type="text" id="login-username" class="form-control" placeholder="Masukkan username" required>
+        </div>
+        <div class="form-group">
+          <label><i class="fa-solid fa-key"></i> Password</label>
+          <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Masuk ke Backend Dashboard</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="dashboard-modal">
+    <div class="modal-card">
+      <div class="cms-container">
+        
+        <!-- Sidebar Menu Left Vertical -->
+        <aside class="cms-sidebar">
+          <div class="modal-header" style="margin-bottom:0; border-bottom:none; padding-bottom:0;">
+            <h2 style="font-size:1.15rem;"><i class="fa-solid fa-sliders" style="color:var(--teal-primary);"></i> CMS Dashboard</h2>
+            <button class="close-modal" onclick="closeModal('dashboard-modal')"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <hr style="border:none; border-top:1px solid var(--border-cream); margin: 0;">
+          
+          <div class="admin-tabs">
+            <button class="admin-tab active" onclick="switchAdminTab('tab-hero', this)">
+              <i class="fa-solid fa-user-gear" style="width:18px;"></i> Profil & Hero
+            </button>
+            <button class="admin-tab" onclick="switchAdminTab('tab-projects', this)">
+              <i class="fa-solid fa-folder-open" style="width:18px;"></i> Proyek / Karya
+            </button>
+            <button class="admin-tab" onclick="switchAdminTab('tab-sections', this)">
+              <i class="fa-solid fa-layer-group" style="width:18px;"></i> Kelola Section
+            </button>
+            <button class="admin-tab" onclick="switchAdminTab('tab-preview', this)">
+              <i class="fa-solid fa-eye" style="width:18px;"></i> Live Preview
+            </button>
+            <button class="admin-tab" onclick="switchAdminTab('tab-settings', this)">
+              <i class="fa-solid fa-gear" style="width:18px;"></i> Setelan
+            </button>
+          </div>
+
+          <div style="margin-top:auto; padding-top:16px;">
+            <button class="btn btn-secondary" style="width: 100%; justify-content: flex-start; font-size:0.82rem;" onclick="logoutAdmin()">
+              <i class="fa-solid fa-right-from-bracket"></i> Keluar Admin
+            </button>
+          </div>
+        </aside>
+
+        <!-- Main Content Right -->
+        <main class="cms-main-content">
+          <!-- Tab Hero -->
+          <div id="tab-hero" class="admin-section active">
+            <h3 style="margin-bottom:16px; color:var(--text-main); font-size:1.2rem;"><i class="fa-solid fa-pen-to-square"></i> Edit Informasi Profil</h3>
+            <form onsubmit="saveHeroData(event)">
+              <div class="form-group">
+                <label>Nama Lengkap</label>
+                <input type="text" id="edit-name" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>Sub-judul / Badge Profil</label>
+                <input type="text" id="edit-badge" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>Gaya Gradient Background Hero</label>
+                <select id="edit-gradient" class="form-control" onchange="toggleRgbPaletteVisibility()" required>
+                  <option value="grad-teal-breeze">Teal Breeze (Pastel Soft)</option>
+                  <option value="grad-sunset-glow">Sunset Glow (Warm Amber)</option>
+                  <option value="grad-aurora-mint">Aurora Mint (Fresh Green)</option>
+                  <option value="grad-deep-ocean">Deep Ocean (Cool Blue)</option>
+                  <option value="grad-custom-rgb">Custom RGB Palette (Warna Kustom)</option>
+                </select>
+              </div>
+
+              <!-- RGB Palette Controls -->
+              <div id="rgb-palette-container" style="display:none; background:rgba(0,0,0,0.03); padding:14px; border-radius:12px; margin-bottom:16px; border:1px solid var(--border-cream);">
+                <h4 style="font-size:0.9rem; margin-bottom:12px; color:var(--text-main);"><i class="fa-solid fa-palette"></i> Palette Warna RGB Kustom</h4>
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap:12px;">
+                  <div>
+                    <label style="font-size:0.78rem; font-weight:700; display:block; margin-bottom:4px;">Warna Utama (Primary Accent)</label>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <input type="color" id="edit-primary-rgb" style="width:40px; height:36px; border:none; border-radius:6px; cursor:pointer;" oninput="updateRgbLabel(this, 'label-primary-rgb')">
+                      <span id="label-primary-rgb" style="font-size:0.75rem; font-weight:600; font-family:monospace;">#5A9E98</span>
+                    </div>
+                  </div>
+                  <div>
+                    <label style="font-size:0.78rem; font-weight:700; display:block; margin-bottom:4px;">Gradient Awal (RGB Start)</label>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <input type="color" id="edit-grad-start-rgb" style="width:40px; height:36px; border:none; border-radius:6px; cursor:pointer;" oninput="updateRgbLabel(this, 'label-grad-start-rgb')">
+                      <span id="label-grad-start-rgb" style="font-size:0.75rem; font-weight:600; font-family:monospace;">#E4F1F0</span>
+                    </div>
+                  </div>
+                  <div>
+                    <label style="font-size:0.78rem; font-weight:700; display:block; margin-bottom:4px;">Gradient Akhir (RGB End)</label>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <input type="color" id="edit-grad-end-rgb" style="width:40px; height:36px; border:none; border-radius:6px; cursor:pointer;" oninput="updateRgbLabel(this, 'label-grad-end-rgb')">
+                      <span id="label-grad-end-rgb" style="font-size:0.75rem; font-weight:600; font-family:monospace;">#5A9E98</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Deskripsi / Bio Singkat</label>
+                <textarea id="edit-bio" class="form-control" required></textarea>
+              </div>
+              <div class="form-group">
+                <label>URL Foto Profil (PFP)</label>
+                <input type="url" id="edit-pfp" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>URL Gambar Background Website</label>
+                <input type="url" id="edit-bg" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>Alamat Email Kontak</label>
+                <input type="email" id="edit-email" class="form-control" required>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Simpan Perubahan Profil</button>
+            </form>
+          </div>
+
+          <!-- Tab Projects -->
+          <div id="tab-projects" class="admin-section">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+              <h3 style="color:var(--text-main); font-size:1.2rem;"><i class="fa-solid fa-boxes-stacked"></i> Kelola Portofolio Proyek</h3>
+              <button class="btn btn-primary" style="padding:8px 16px; font-size:0.85rem;" onclick="openAddProjectForm()">
+                <i class="fa-solid fa-plus"></i> Tambah Proyek
+              </button>
+            </div>
+
+            <ul class="item-list-admin" id="admin-projects-list">
+              <!-- Admin projects list -->
+            </ul>
+
+            <!-- Form Tambah/Edit Proyek -->
+            <div id="project-form-container" style="display:none;">
+              <h4 id="project-form-title" style="margin-bottom:12px; font-size:0.95rem; color:var(--text-main);">Form Proyek</h4>
+              <form onsubmit="saveProjectItem(event)">
+                <input type="hidden" id="proj-id">
+                <div class="form-group">
+                  <label>Judul Proyek</label>
+                  <input type="text" id="proj-title" class="form-control" placeholder="Nama Proyek / Aplikasi" required>
+                </div>
+                <div class="form-group">
+                  <label>Kategori Aplikasi</label>
+                  <select id="proj-category" class="form-control" required>
+                    <option value="mobile">Mobile App</option>
+                    <option value="web">Web Design</option>
+                    <option value="game">Game Dev</option>
+                    <option value="uiux">UI/UX Prototype</option>
+                    <option value="ai">AI & ML</option>
+                    <option value="desktop">Desktop App</option>
+                    <option value="ecommerce">E-Commerce</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Deskripsi Proyek</label>
+                  <textarea id="proj-desc" class="form-control" required></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Tag (Pisahkan dengan koma)</label>
+                  <input type="text" id="proj-tags" class="form-control" placeholder="MobileApp, UIUX" required>
+                </div>
+                <div class="form-group">
+                  <label>Link URL Tujuan Tombol Kartu</label>
+                  <input type="url" id="proj-link" class="form-control" placeholder="https://example.com" required>
+                </div>
+                <div style="display:flex; gap:8px;">
+                  <button type="submit" class="btn btn-primary" style="flex:1;">Simpan Kartu</button>
+                  <button type="button" class="btn btn-secondary" onclick="hideProjectForm()">Batal</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Tab Dynamic Sections -->
+          <div id="tab-sections" class="admin-section">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+              <h3 style="color:var(--text-main); font-size:1.2rem;"><i class="fa-solid fa-layer-group"></i> Kelola & Tambah Section Website</h3>
+              <button class="btn btn-primary" style="padding:8px 16px; font-size:0.85rem;" onclick="openAddSectionForm()">
+                <i class="fa-solid fa-plus"></i> Tambah Section Baru
+              </button>
+            </div>
+
+            <ul class="item-list-admin" id="admin-sections-list">
+              <!-- Admin sections list -->
+            </ul>
+
+            <!-- Form Tambah/Edit Section -->
+            <div id="section-form-container" style="display:none; background:var(--teal-light); border:1px solid var(--border-cream); padding:16px; border-radius:12px; margin-top:12px;">
+              <h4 id="section-form-title" style="margin-bottom:12px; font-size:0.95rem; color:var(--text-main);">Form Section</h4>
+              <form onsubmit="saveSectionItem(event)">
+                <input type="hidden" id="sec-id">
+                <div class="form-group">
+                  <label>Judul Section</label>
+                  <input type="text" id="sec-title" class="form-control" placeholder="Contoh: Pengalaman Kerja" required>
+                </div>
+                <div class="form-group">
+                  <label>Ikon FontAwesome (Class)</label>
+                  <input type="text" id="sec-icon" class="form-control" placeholder="fa-solid fa-briefcase" required>
+                </div>
+                <div class="form-group">
+                  <label>Isi Konten Section</label>
+                  <textarea id="sec-content" class="form-control" placeholder="Deskripsi konten section..." required></textarea>
+                </div>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;" class="form-group">
+                  <div>
+                    <label>Warna Background (RGB Hex)</label>
+                    <input type="color" id="sec-bg-color" class="form-control" style="height:40px; padding:2px; cursor:pointer;" value="#14201D">
+                  </div>
+                  <div>
+                    <label>Warna Teks (RGB Hex)</label>
+                    <input type="color" id="sec-text-color" class="form-control" style="height:40px; padding:2px; cursor:pointer;" value="#FFFFFF">
+                  </div>
+                </div>
+                <div style="display:flex; gap:8px;">
+                  <button type="submit" class="btn btn-primary" style="flex:1;">Simpan Section</button>
+                  <button type="button" class="btn btn-secondary" onclick="hideSectionForm()">Batal</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Tab Live Preview Front-End -->
+          <div id="tab-preview" class="admin-section">
+            <div class="preview-toolbar">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <h3 style="color:var(--text-main); font-size:1.05rem; margin:0;">
+                  <i class="fa-solid fa-desktop" style="color:var(--teal-primary);"></i> Preview Real-Time Front-End
+                </h3>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                <div class="device-btn-group">
+                  <button class="device-btn active" id="btn-device-mobile" onclick="setPreviewDevice('mobile')">
+                    <i class="fa-solid fa-mobile-screen"></i> Mobile
+                  </button>
+                  <button class="device-btn" id="btn-device-tablet" onclick="setPreviewDevice('tablet')">
+                    <i class="fa-solid fa-tablet-screen-button"></i> Tablet
+                  </button>
+                  <button class="device-btn" id="btn-device-desktop" onclick="setPreviewDevice('desktop')">
+                    <i class="fa-solid fa-laptop"></i> Desktop
+                  </button>
+                </div>
+                <button class="btn btn-secondary" style="padding: 5px 12px; font-size: 0.78rem;" onclick="toggleFullscreenPreview()" title="Tampilan Layar Penuh">
+                  <i class="fa-solid fa-expand" id="fullscreen-btn-icon"></i> Fullscreen
+                </button>
+                <button class="btn btn-secondary" style="padding: 5px 12px; font-size: 0.78rem;" onclick="togglePreviewTheme()">
+                  <i class="fa-solid fa-circle-half-stroke"></i> Tes Theme Preview
+                </button>
+              </div>
+            </div>
+
+            <div class="preview-viewport-container" id="preview-viewport-container">
+              <button class="fullscreen-exit-btn" id="fullscreen-exit-btn" onclick="toggleFullscreenPreview()">
+                <i class="fa-solid fa-compress"></i> Keluar Fullscreen (Esc)
+              </button>
+              <div class="preview-device-screen device-mobile" id="preview-screen-frame">
+                <iframe id="cms-live-preview-iframe" class="preview-iframe" title="Front-End Live Preview"></iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Settings -->
+          <div id="tab-settings" class="admin-section">
+            <h3 style="margin-bottom:16px; color:var(--text-main); font-size:1.2rem;"><i class="fa-solid fa-sliders"></i> Pengaturan Sistem</h3>
+            <div style="text-align:center; padding:24px; background:var(--card-cream); border:1px solid var(--border-cream); border-radius:12px;">
+              <i class="fa-solid fa-triangle-exclamation" style="font-size:2.5rem; color:#e67e22; margin-bottom:12px;"></i>
+              <h4 style="margin-bottom:8px; color:var(--text-main);">Reset Konten Backend</h4>
+              <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:20px; max-width:400px; margin-left:auto; margin-right:auto;">
+                Kembalikan seluruh data profil, keahlian, dan daftar kartu ke setelan awal pabrik.
+              </p>
+              <button class="btn btn-danger" onclick="resetToDefaultData()"><i class="fa-solid fa-rotate-left"></i> Reset Data ke Awal</button>
+            </div>
+          </div>
+        </main>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"><i class="fa-solid fa-circle-check"></i> <span id="toast-text">Berhasil</span></div>
+
+  <script>
+    // Mobile Navigation Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('nav-menu-wrapper');
+      const icon = document.getElementById('mobile-menu-icon');
+      if (!menu) return;
+
+      const isOpen = menu.classList.toggle('active');
+      if (icon) {
+        icon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+      }
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('nav-menu-wrapper');
+      const icon = document.getElementById('mobile-menu-icon');
+      if (menu && menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        if (icon) icon.className = 'fa-solid fa-bars';
+      }
+    }
+
+    // Initial Data Schema
+    const defaultAppData = {
+      hero: {
+        name: "Naufal F.A",
+        badge: "Mobile UI/UX Designer",
+        bio: "Merancang pengalaman digital intuitif dan estetis berbasis mobile-first untuk produk digital masa kini.",
+        pfp: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwJQ5IO_St85aNHxpchCIygMqQyyiTkbq_nwcRd_LdLYd7hrK0-SspIOQ&s=10",
+        bg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdG-QOvRsIt22LYV9aoiWzCgd41tJYR2zzA0_GDr74Bc5p81xrXS4M5hIs&s=10",
+        email: "naufal.fa@example.com",
+        gradient: "grad-custom-rgb",
+        primaryRgb: "#5A9E98",
+        gradStartRgb: "#E4F1F0",
+        gradEndRgb: "#5A9E98"
+      },
+      sections: [
+        {
+          id: "sec_1",
+          title: "Pengalaman & Layanan",
+          icon: "fa-solid fa-briefcase",
+          content: "Fokus pada pembuatan desain UI/UX aplikasi mobile, prototyping interaktif, dan sistem desain yang terukur untuk menjamin kepuasan pengguna.",
+          bgColor: "#14201D",
+          textColor: "#FFFFFF"
+        }
+      ],
+      projects: [
+        {
+          id: "p1",
+          title: "Nusantara Flow App",
+          category: "mobile",
+          desc: "Aplikasi manajemen keuangan pribadi berbasis mobile dengan antarmuka yang ramah pengguna.",
+          tags: ["MobileApp", "UIUX"],
+          link: "https://github.com"
+        },
+        {
+          id: "p2",
+          title: "KopiKita Landing",
+          category: "web",
+          desc: "Landing page cepat dan ringan untuk rantai kedai kopi lokal dengan pemesanan langsung.",
+          tags: ["Responsive", "CleanDesign"],
+          link: "https://dribbble.com"
+        },
+        {
+          id: "p3",
+          title: "Pixel Quest Adventure",
+          category: "game",
+          desc: "Game indie platformer 2D bertema petualangan dengan grafis retro piksel estetis.",
+          tags: ["GameDev", "PixelArt"],
+          link: "https://roblox.com"
+        },
+        {
+          id: "p4",
+          title: "NeoBank Mobile Redesign",
+          category: "uiux",
+          desc: "Studi kasus prototipe desain antarmuka perbankan masa depan yang intuitif dan modern.",
+          tags: ["Figma", "UIUXDesign"],
+          link: "https://figma.com"
+        },
+        {
+          id: "p5",
+          title: "Aura AI Photo Generator",
+          category: "ai",
+          desc: "Platform pembuat gambar AI cerdas berbasis web untuk kreator konten digital.",
+          tags: ["AI", "MachineLearning"],
+          link: "https://github.com"
+        },
+        {
+          id: "p6",
+          title: "TaskMaster Productivity",
+          category: "desktop",
+          desc: "Aplikasi manajemen waktu dan tugas harian berbasis desktop untuk meningkatkan fokus kerja.",
+          tags: ["DesktopApp", "Productivity"],
+          link: "https://github.com"
+        },
+        {
+          id: "p7",
+          title: "TokoKita E-Commerce",
+          category: "ecommerce",
+          desc: "Toko online modern berkecepatan tinggi dengan integrasi pembayaran serba cepat.",
+          tags: ["Ecommerce", "WebStore"],
+          link: "https://github.com"
+        }
+      ]
+    };
+
+    const categoryLabels = {
+      all: "Semua",
+      mobile: "Mobile App",
+      web: "Web Design",
+      game: "Game Dev",
+      uiux: "UI/UX Prototype",
+      ai: "AI & ML",
+      desktop: "Desktop App",
+      ecommerce: "E-Commerce"
+    };
+
+    let appData = loadAppData();
+    let currentFilter = 'all';
+
+    // Theme Management Functions
+    function initTheme() {
+      const savedTheme = localStorage.getItem('naufal_profile_theme') || 'light';
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+      } else {
+        document.body.classList.remove('dark-theme');
+      }
+      updateThemeIcon();
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-theme');
+      const isDark = document.body.classList.contains('dark-theme');
+      localStorage.setItem('naufal_profile_theme', isDark ? 'dark' : 'light');
+      updateThemeIcon();
+      renderApp();
+      showToast(isDark ? 'Mode Gelap diaktifkan' : 'Mode Terang diaktifkan');
+    }
+
+    function updateThemeIcon() {
+      const icon = document.getElementById('theme-icon');
+      const isDark = document.body.classList.contains('dark-theme');
+      if (icon) {
+        icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      }
+    }
+
+    function renderBackground() {
+      const isDark = document.body.classList.contains('dark-theme');
+      const overlay = isDark
+        ? 'linear-gradient(rgba(20, 20, 23, 0.92), rgba(20, 20, 23, 0.96))'
+        : 'linear-gradient(rgba(18, 28, 26, 0.65), rgba(18, 28, 26, 0.75))';
+      document.body.style.backgroundImage = `${overlay}, url('${appData.hero.bg}')`;
+    }
+
+    // Data Store Functions
+    function loadAppData() {
+      const saved = localStorage.getItem('naufal_profile_app_data');
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          if (!parsed.sections) parsed.sections = defaultAppData.sections;
+          return parsed;
+        } catch (e) { console.error(e); }
+      }
+      return JSON.parse(JSON.stringify(defaultAppData));
+    }
+
+    function saveAppData() {
+      localStorage.setItem('naufal_profile_app_data', JSON.stringify(appData));
+      renderApp();
+      updateLivePreviewIframe();
+    }
+
+    let previewThemeIsDark = false;
+    let previewDeviceMode = 'mobile';
+
+    function setPreviewDevice(mode) {
+      previewDeviceMode = mode;
+      const frame = document.getElementById('preview-screen-frame');
+      
+      document.getElementById('btn-device-mobile').classList.remove('active');
+      document.getElementById('btn-device-tablet').classList.remove('active');
+      document.getElementById('btn-device-desktop').classList.remove('active');
+
+      const btn = document.getElementById(`btn-device-${mode}`);
+      if (btn) btn.classList.add('active');
+
+      frame.className = `preview-device-screen device-${mode}`;
+    }
+
+    function toggleFullscreenPreview() {
+      const container = document.getElementById('preview-viewport-container');
+      if (!container) return;
+
+      const isFullscreen = container.classList.toggle('is-fullscreen');
+      const icon = document.getElementById('fullscreen-btn-icon');
+      if (icon) {
+        icon.className = isFullscreen ? 'fa-solid fa-compress' : 'fa-solid fa-expand';
+      }
+
+      // Otomatis berpindah ke mode desktop saat mengaktifkan mode fullscreen
+      if (isFullscreen) {
+        setPreviewDevice('desktop');
+      }
+
+      updateLivePreviewIframe();
+    }
+
+    // Tangani tombol ESC untuk keluar dari mode fullscreen preview
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const container = document.getElementById('preview-viewport-container');
+        if (container && container.classList.contains('is-fullscreen')) {
+          toggleFullscreenPreview();
+        }
+      }
+    });
+
+    function togglePreviewTheme() {
+      previewThemeIsDark = !previewThemeIsDark;
+      updateLivePreviewIframe();
+    }
+
+    function updateLivePreviewIframe() {
+      const iframe = document.getElementById('cms-live-preview-iframe');
+      if (!iframe) return;
+
+      // Duplicate HTML content for sandboxed iframe live preview
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      if (!doc) return;
+
+      const htmlContent = document.documentElement.outerHTML;
+      doc.open();
+      doc.write(htmlContent);
+      doc.close();
+
+      // Ensure modals are hidden, but Admin button remains visible in mobile header preview
+      setTimeout(() => {
+        try {
+          const iframeBody = doc.body;
+          if (iframeBody) {
+            if (previewThemeIsDark) {
+              iframeBody.classList.add('dark-theme');
+            } else {
+              iframeBody.classList.remove('dark-theme');
+            }
+            
+            // Clean up admin modals inside live preview frame
+            const loginModal = doc.getElementById('login-modal');
+            if (loginModal) loginModal.remove();
+            const dashModal = doc.getElementById('dashboard-modal');
+            if (dashModal) dashModal.remove();
+          }
+        } catch(e) { console.error('Preview sync error:', e); }
+      }, 50);
+    }
+
+    function resetToDefaultData() {
+      appData = JSON.parse(JSON.stringify(defaultAppData));
+      saveAppData();
+      showToast('Data berhasil di-reset ke setelan awal!');
+      closeModal('dashboard-modal');
+    }
+
+    function renderApp() {
+      // 1. Render Background
+      renderBackground();
+
+      // Apply Custom RGB Primary Color dynamically
+      if (appData.hero.primaryRgb) {
+        document.documentElement.style.setProperty('--teal-primary', appData.hero.primaryRgb);
+      } else {
+        document.documentElement.style.removeProperty('--teal-primary');
+      }
+
+      // 2. Render Hero
+      document.getElementById('logo-text').innerHTML = `<i class="fa-solid fa-leaf" style="color: var(--teal-primary)"></i> ${appData.hero.name}`;
+      document.getElementById('footer-name').innerText = appData.hero.name;
+
+      const heroContainer = document.getElementById('about');
+      heroContainer.className = `hero ${appData.hero.gradient || 'grad-custom-rgb'}`;
+      
+      // Handle Custom RGB Gradient with Dark Mode High-Contrast Adaptation
+      if (appData.hero.gradient === 'grad-custom-rgb') {
+        const isDark = document.body.classList.contains('dark-theme');
+        const start = appData.hero.gradStartRgb || '#E4F1F0';
+        const end = appData.hero.gradEndRgb || '#5A9E98';
+        if (isDark) {
+          heroContainer.style.background = `linear-gradient(135deg, #1C1C20 0%, #282830 50%, ${end}AA 100%)`;
+        } else {
+          heroContainer.style.background = `linear-gradient(135deg, ${start} 0%, rgba(255, 253, 249, 0.95) 50%, ${end} 100%)`;
+        }
+      } else {
+        heroContainer.style.background = '';
+      }
+
+      heroContainer.innerHTML = `
+        <div class="avatar-wrapper">
+          <div class="avatar">
+            <img src="${appData.hero.pfp}" alt="Foto Profil ${appData.hero.name}" onerror="this.src='https://placehold.co/110x110/E4F1F0/5A9E98?text=Naufal'">
+          </div>
+        </div>
+        <span class="badge">${appData.hero.badge}</span>
+        <h1>${appData.hero.name}</h1>
+        <p>${appData.hero.bio}</p>
+        <div class="cta-group">
+          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Hubungi Saya</a>
+          <a href="#projects" class="btn btn-secondary"><i class="fa-solid fa-folder-open"></i> Lihat Portofolio</a>
+        </div>
+      `;
+
+      // 3. Render Custom Sections
+      renderCustomSections();
+
+      // 4. Render Project Filters & Cards
+      renderProjectsView();
+
+      // 5. Render Contact
+      const contactContainer = document.getElementById('contact-container');
+      contactContainer.innerHTML = `
+        <h3>Tertarik Bekerja Sama?</h3>
+        <p>Saya selalu terbuka untuk diskusi proyek baru atau sekadar menyapa.</p>
+        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+          <a href="mailto:${appData.hero.email}" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Kirim Email</a>
+          <button class="btn btn-secondary" onclick="copyEmail('${appData.hero.email}')"><i class="fa-solid fa-copy"></i> Salin Email</button>
+        </div>
+      `;
+
+      // Render Admin Lists if active
+      renderAdminLists();
+    }
+
+    function renderCustomSections() {
+      const existingContainer = document.getElementById('dynamic-custom-sections');
+      if (existingContainer) {
+        existingContainer.remove();
+      }
+
+      if (!appData.sections || appData.sections.length === 0) return;
+
+      const mainEl = document.querySelector('main.container');
+      const projectsSection = document.getElementById('projects');
+
+      const container = document.createElement('div');
+      container.id = 'dynamic-custom-sections';
+
+      const isDark = document.body.classList.contains('dark-theme');
+
+      container.innerHTML = appData.sections.map(sec => {
+        const bg = isDark ? '#222226' : (sec.bgColor || '#14201D');
+        const text = isDark ? '#E4E4E8' : (sec.textColor || '#FFFFFF');
+        return `
+        <section class="section">
+          <h2 class="section-title"><i class="${sec.icon || 'fa-solid fa-star'}"></i> ${sec.title}</h2>
+          <div style="background:${bg}; color:${text}; padding:20px; border-radius:var(--radius); border:1px solid var(--border-cream); box-shadow:var(--shadow);">
+            <p style="font-size:0.95rem; line-height:1.7;">${sec.content}</p>
+          </div>
+        </section>
+      `;
+      }).join('');
+
+      mainEl.insertBefore(container, projectsSection);
+    }
+
+    function renderProjectsView() {
+      // Filter buttons
+      const filterContainer = document.getElementById('filter-container');
+      const categoryKeys = Object.keys(categoryLabels);
+      
+      filterContainer.innerHTML = categoryKeys.map(catKey => `
+        <button class="filter-btn ${currentFilter === catKey ? 'active' : ''}" onclick="setFilter('${catKey}')">
+          ${categoryLabels[catKey]}
+        </button>
+      `).join('');
+
+      // Project items
+      const projectsContainer = document.getElementById('projects-container');
+      const filtered = appData.projects.filter(p => currentFilter === 'all' || p.category === currentFilter);
+
+      if (filtered.length === 0) {
+        projectsContainer.innerHTML = `<p style="grid-column: 1/-1; color: white; text-align: center; padding: 20px;">Belum ada karya dalam kategori ini.</p>`;
+        return;
+      }
+
+      projectsContainer.innerHTML = filtered.map(p => {
+        const catLabel = categoryLabels[p.category] || p.category;
+        return `
+        <article class="project-card">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
+              <h3 style="margin-bottom:0;">${p.title}</h3>
+              <span style="font-size:0.7rem; padding: 2px 8px; border-radius: 12px; background: var(--teal-light); color: var(--teal-primary); font-weight:700;">${catLabel}</span>
+            </div>
+            <p>${p.desc}</p>
+            <div class="project-tags">
+              ${p.tags.map(t => `<span class="project-tag">#${t}</span>`).join('')}
+            </div>
+          </div>
+          <a href="${p.link}" target="_blank" class="btn btn-secondary" style="width: 100%; text-decoration: none;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Link Proyek
+          </a>
+        </article>
+      `;
+      }).join('');
+    }
+
+    function setFilter(cat) {
+      currentFilter = cat;
+      renderProjectsView();
+    }
+
+    function checkIsLoggedIn() {
+      return sessionStorage.getItem('admin_logged_in') === 'true';
+    }
+
+    function toggleAdminView() {
+      if (checkIsLoggedIn()) {
+        openDashboardModal();
+      } else {
+        openModal('login-modal');
+      }
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const user = document.getElementById('login-username').value.trim();
+      const pass = document.getElementById('login-password').value.trim();
+
+      if (user === 'admin' && pass === 'nopalganteng') {
+        sessionStorage.setItem('admin_logged_in', 'true');
+        closeModal('login-modal');
+        showToast('Login berhasil! Selamat datang Admin.');
+        openDashboardModal();
+        updateAdminTriggerButton();
+      } else {
+        showToast('Username atau Password salah!');
+      }
+    }
+
+    function logoutAdmin() {
+      sessionStorage.removeItem('admin_logged_in');
+      closeModal('dashboard-modal');
+      showToast('Berhasil logout dari Admin.');
+      updateAdminTriggerButton();
+    }
+
+    function updateAdminTriggerButton() {
+      const btn = document.getElementById('open-admin-btn');
+      if (checkIsLoggedIn()) {
+        btn.innerHTML = `<i class="fa-solid fa-user-gear"></i> CMS Panel`;
+        btn.style.background = '#27ae60';
+      } else {
+        btn.innerHTML = `<i class="fa-solid fa-lock"></i> Admin`;
+        btn.style.background = '#3B726D';
+      }
+    }
+
+    function openDashboardModal() {
+      // Fill Form with current data
+      document.getElementById('edit-name').value = appData.hero.name;
+      document.getElementById('edit-badge').value = appData.hero.badge;
+      document.getElementById('edit-gradient').value = appData.hero.gradient || 'grad-custom-rgb';
+      document.getElementById('edit-bio').value = appData.hero.bio;
+      document.getElementById('edit-pfp').value = appData.hero.pfp;
+      document.getElementById('edit-bg').value = appData.hero.bg;
+      document.getElementById('edit-email').value = appData.hero.email;
+
+      // RGB Palette Values
+      const primaryRgb = appData.hero.primaryRgb || '#5A9E98';
+      const gradStartRgb = appData.hero.gradStartRgb || '#E4F1F0';
+      const gradEndRgb = appData.hero.gradEndRgb || '#5A9E98';
+
+      document.getElementById('edit-primary-rgb').value = primaryRgb;
+      document.getElementById('edit-grad-start-rgb').value = gradStartRgb;
+      document.getElementById('edit-grad-end-rgb').value = gradEndRgb;
+
+      document.getElementById('label-primary-rgb').innerText = primaryRgb.toUpperCase();
+      document.getElementById('label-grad-start-rgb').innerText = gradStartRgb.toUpperCase();
+      document.getElementById('label-grad-end-rgb').innerText = gradEndRgb.toUpperCase();
+
+      toggleRgbPaletteVisibility();
+      renderAdminLists();
+      openModal('dashboard-modal');
+    }
+
+    function toggleRgbPaletteVisibility() {
+      const gradVal = document.getElementById('edit-gradient').value;
+      const paletteContainer = document.getElementById('rgb-palette-container');
+      if (gradVal === 'grad-custom-rgb') {
+        paletteContainer.style.display = 'block';
+      } else {
+        paletteContainer.style.display = 'none';
+      }
+    }
+
+    function updateRgbLabel(input, labelId) {
+      const val = input.value.toUpperCase();
+      document.getElementById(labelId).innerText = val;
+      
+      // Live RGB preview updates
+      if (labelId === 'label-primary-rgb') {
+        document.documentElement.style.setProperty('--teal-primary', input.value);
+      } else if (labelId === 'label-grad-start-rgb' || labelId === 'label-grad-end-rgb') {
+        const start = document.getElementById('edit-grad-start-rgb').value;
+        const end = document.getElementById('edit-grad-end-rgb').value;
+        const heroContainer = document.getElementById('about');
+        if (document.getElementById('edit-gradient').value === 'grad-custom-rgb') {
+          heroContainer.style.background = `linear-gradient(135deg, ${start} 0%, rgba(255, 253, 249, 0.95) 50%, ${end} 100%)`;
+        }
+      }
+    }
+
+    function saveHeroData(e) {
+      e.preventDefault();
+      appData.hero.name = document.getElementById('edit-name').value.trim();
+      appData.hero.badge = document.getElementById('edit-badge').value.trim();
+      appData.hero.gradient = document.getElementById('edit-gradient').value;
+      appData.hero.bio = document.getElementById('edit-bio').value.trim();
+      appData.hero.pfp = document.getElementById('edit-pfp').value.trim();
+      appData.hero.bg = document.getElementById('edit-bg').value.trim();
+      appData.hero.email = document.getElementById('edit-email').value.trim();
+
+      // Save RGB Palette
+      appData.hero.primaryRgb = document.getElementById('edit-primary-rgb').value;
+      appData.hero.gradStartRgb = document.getElementById('edit-grad-start-rgb').value;
+      appData.hero.gradEndRgb = document.getElementById('edit-grad-end-rgb').value;
+
+      saveAppData();
+      showToast('Profil dan palette warna RGB berhasil diperbarui!');
+    }
+
+    // Real-time Input Listeners for Instant Preview Updates
+    function attachLiveInputListeners() {
+      const liveInputs = [
+        'edit-name', 'edit-badge', 'edit-gradient', 'edit-bio', 'edit-pfp', 'edit-bg', 'edit-email',
+        'edit-primary-rgb', 'edit-grad-start-rgb', 'edit-grad-end-rgb'
+      ];
+
+      liveInputs.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('input', () => {
+            if (document.getElementById('tab-preview').classList.contains('active')) {
+              updateLivePreviewIframe();
+            }
+          });
+        }
+      });
+    }
+
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) modal.classList.add('active');
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) modal.classList.remove('active');
+    }
+
+    function renderAdminLists() {
+      // Render Projects List in CMS
+      const projList = document.getElementById('admin-projects-list');
+      if (projList) {
+        if (appData.projects.length === 0) {
+          projList.innerHTML = '<li style="color:var(--text-muted); font-size:0.85rem; padding:10px;">Belum ada proyek. Silakan tambah proyek baru.</li>';
+        } else {
+          projList.innerHTML = appData.projects.map(p => `
+            <li class="item-row">
+              <div class="item-row-info">
+                <strong>${p.title}</strong>
+                <span>${categoryLabels[p.category] || p.category} • ${p.tags.join(', ')}</span>
+              </div>
+              <div class="item-actions">
+                <button class="btn-icon btn-edit" title="Edit Proyek" onclick="editProjectItem('${p.id}')">
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+                <button class="btn-icon btn-duplicate" title="Duplikat Proyek" onclick="duplicateProjectItem('${p.id}')">
+                  <i class="fa-solid fa-clone"></i>
+                </button>
+                <button class="btn-icon btn-delete" title="Hapus Proyek" onclick="deleteProjectItem('${p.id}')">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </li>
+          `).join('');
+        }
+      }
+
+      // Render Sections List in CMS
+      const secList = document.getElementById('admin-sections-list');
+      if (secList) {
+        if (!appData.sections || appData.sections.length === 0) {
+          secList.innerHTML = '<li style="color:var(--text-muted); font-size:0.85rem; padding:10px;">Belum ada custom section. Silakan tambah section baru.</li>';
+        } else {
+          secList.innerHTML = appData.sections.map(s => `
+            <li class="item-row">
+              <div class="item-row-info">
+                <strong><i class="${s.icon}"></i> ${s.title}</strong>
+                <span>${s.content.substring(0, 40)}...</span>
+              </div>
+              <div class="item-actions">
+                <button class="btn-icon btn-edit" title="Edit Section" onclick="editSectionItem('${s.id}')">
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+                <button class="btn-icon btn-duplicate" title="Duplikat Section" onclick="duplicateSectionItem('${s.id}')">
+                  <i class="fa-solid fa-clone"></i>
+                </button>
+                <button class="btn-icon btn-delete" title="Hapus Section" onclick="deleteSectionItem('${s.id}')">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </li>
+          `).join('');
+        }
+      }
+    }
+
+    // Project Form Handlers
+    function openAddProjectForm() {
+      document.getElementById('proj-id').value = '';
+      document.getElementById('proj-title').value = '';
+      document.getElementById('proj-category').value = 'mobile';
+      document.getElementById('proj-desc').value = '';
+      document.getElementById('proj-tags').value = '';
+      document.getElementById('proj-link').value = '';
+      document.getElementById('project-form-title').innerText = 'Tambah Proyek Baru';
+      document.getElementById('project-form-container').style.display = 'block';
+    }
+
+    function hideProjectForm() {
+      document.getElementById('project-form-container').style.display = 'none';
+    }
+
+    function editProjectItem(id) {
+      const p = appData.projects.find(item => item.id === id);
+      if (!p) return;
+      document.getElementById('proj-id').value = p.id;
+      document.getElementById('proj-title').value = p.title;
+      document.getElementById('proj-category').value = p.category;
+      document.getElementById('proj-desc').value = p.desc;
+      document.getElementById('proj-tags').value = p.tags.join(', ');
+      document.getElementById('proj-link').value = p.link;
+      document.getElementById('project-form-title').innerText = 'Edit Proyek';
+      document.getElementById('project-form-container').style.display = 'block';
+    }
+
+    function duplicateProjectItem(id) {
+      const p = appData.projects.find(item => item.id === id);
+      if (!p) return;
+      const newProj = {
+        ...JSON.parse(JSON.stringify(p)),
+        id: 'p_' + Date.now(),
+        title: `${p.title} (Salinan)`
+      };
+      appData.projects.push(newProj);
+      saveAppData();
+      showToast('Proyek berhasil diduplikat!');
+    }
+
+    function deleteProjectItem(id) {
+      appData.projects = appData.projects.filter(p => p.id !== id);
+      saveAppData();
+      showToast('Proyek berhasil dihapus!');
+    }
+
+    function saveProjectItem(e) {
+      e.preventDefault();
+      const id = document.getElementById('proj-id').value;
+      const title = document.getElementById('proj-title').value.trim();
+      const category = document.getElementById('proj-category').value;
+      const desc = document.getElementById('proj-desc').value.trim();
+      const tags = document.getElementById('proj-tags').value.split(',').map(t => t.trim()).filter(Boolean);
+      const link = document.getElementById('proj-link').value.trim();
+
+      if (id) {
+        const idx = appData.projects.findIndex(p => p.id === id);
+        if (idx !== -1) {
+          appData.projects[idx] = { id, title, category, desc, tags, link };
+        }
+      } else {
+        const newProj = {
+          id: 'p_' + Date.now(),
+          title,
+          category,
+          desc,
+          tags,
+          link
+        };
+        appData.projects.push(newProj);
+      }
+
+      saveAppData();
+      hideProjectForm();
+      showToast('Proyek berhasil disimpan!');
+    }
+
+    // Section Form Handlers
+    function openAddSectionForm() {
+      document.getElementById('sec-id').value = '';
+      document.getElementById('sec-title').value = '';
+      document.getElementById('sec-icon').value = 'fa-solid fa-star';
+      document.getElementById('sec-content').value = '';
+      document.getElementById('sec-bg-color').value = '#14201D';
+      document.getElementById('sec-text-color').value = '#FFFFFF';
+      document.getElementById('section-form-title').innerText = 'Tambah Section Baru';
+      document.getElementById('section-form-container').style.display = 'block';
+    }
+
+    function hideSectionForm() {
+      document.getElementById('section-form-container').style.display = 'none';
+    }
+
+    function editSectionItem(id) {
+      const s = appData.sections.find(item => item.id === id);
+      if (!s) return;
+      document.getElementById('sec-id').value = s.id;
+      document.getElementById('sec-title').value = s.title;
+      document.getElementById('sec-icon').value = s.icon || 'fa-solid fa-star';
+      document.getElementById('sec-content').value = s.content;
+      document.getElementById('sec-bg-color').value = s.bgColor || '#14201D';
+      document.getElementById('sec-text-color').value = s.textColor || '#FFFFFF';
+      document.getElementById('section-form-title').innerText = 'Edit Section';
+      document.getElementById('section-form-container').style.display = 'block';
+    }
+
+    function duplicateSectionItem(id) {
+      const s = appData.sections.find(item => item.id === id);
+      if (!s) return;
+      const newSec = {
+        ...JSON.parse(JSON.stringify(s)),
+        id: 'sec_' + Date.now(),
+        title: `${s.title} (Salinan)`
+      };
+      if (!appData.sections) appData.sections = [];
+      appData.sections.push(newSec);
+      saveAppData();
+      showToast('Section berhasil diduplikat!');
+    }
+
+    function deleteSectionItem(id) {
+      appData.sections = appData.sections.filter(s => s.id !== id);
+      saveAppData();
+      showToast('Section berhasil dihapus!');
+    }
+
+    function saveSectionItem(e) {
+      e.preventDefault();
+      const id = document.getElementById('sec-id').value;
+      const title = document.getElementById('sec-title').value.trim();
+      const icon = document.getElementById('sec-icon').value.trim() || 'fa-solid fa-star';
+      const content = document.getElementById('sec-content').value.trim();
+      const bgColor = document.getElementById('sec-bg-color').value;
+      const textColor = document.getElementById('sec-text-color').value;
+
+      if (!appData.sections) appData.sections = [];
+
+      if (id) {
+        const idx = appData.sections.findIndex(s => s.id === id);
+        if (idx !== -1) {
+          appData.sections[idx] = { id, title, icon, content, bgColor, textColor };
+        }
+      } else {
+        const newSec = {
+          id: 'sec_' + Date.now(),
+          title,
+          icon,
+          content,
+          bgColor,
+          textColor
+        };
+        appData.sections.push(newSec);
+      }
+
+      saveAppData();
+      hideSectionForm();
+      showToast('Section berhasil disimpan!');
+    }
+
+    function switchAdminTab(tabId, btn) {
+      document.querySelectorAll('.admin-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+
+      btn.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+
+      if (tabId === 'tab-preview') {
+        updateLivePreviewIframe();
+      }
+    }
+
+    // Utility Helpers
+    function copyEmail(email) {
+      const tempInput = document.createElement('input');
+      tempInput.value = email;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      showToast(`Email ${email} berhasil disalin!`);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-text').innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Initialize Page
+    window.onload = function() {
+      initTheme();
+      renderApp();
+      updateAdminTriggerButton();
+      attachLiveInputListeners();
+
+      // Navbar scroll effect & Dynamic Scrollspy
+      const sections = document.querySelectorAll('main section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a');
+
+      function handleScroll() {
+        const header = document.getElementById('navbar');
+        if (window.scrollY > 20) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+
+        // Scrollspy logic
+        let currentSection = '';
+        const scrollPosition = window.scrollY + 120;
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+    };
+  </script>
+</body>
+</html>
