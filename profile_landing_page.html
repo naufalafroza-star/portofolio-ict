@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <style>
     :root {
       --bg-cream: #FAF6F0;
@@ -50,7 +50,7 @@
       border-color: #3A3A42;
     }
 
-    body.dark-theme .filter-btn.active, 
+    body.dark-theme .filter-btn.active,
     body.dark-theme .filter-btn:hover {
       background: var(--teal-primary);
       color: #141417;
@@ -64,7 +64,7 @@
       border-color: #3A3A42;
     }
 
-    body.dark-theme .skill-tag:hover, 
+    body.dark-theme .skill-tag:hover,
     body.dark-theme .skill-tag.active {
       background-color: var(--teal-primary);
       color: #141417;
@@ -235,7 +235,8 @@
       transition: all 0.2s ease;
     }
 
-    .device-btn.active, .device-btn:hover {
+    .device-btn.active,
+    .device-btn:hover {
       background: var(--teal-primary);
       color: white;
       border-color: var(--teal-primary);
@@ -261,7 +262,7 @@
     .preview-device-screen {
       background: var(--bg-cream);
       border-radius: 16px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
       border: 4px solid #2d3748;
       overflow: hidden;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -482,7 +483,8 @@
       border-radius: 8px;
     }
 
-    .nav-links a:hover, .nav-links a.active {
+    .nav-links a:hover,
+    .nav-links a.active {
       color: var(--teal-hover);
       background-color: var(--teal-light);
     }
@@ -579,7 +581,7 @@
       align-items: center;
       justify-content: center;
       border: 3px solid var(--card-cream);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
       overflow: hidden;
     }
 
@@ -716,7 +718,8 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .skill-tag:hover, .skill-tag.active {
+    .skill-tag:hover,
+    .skill-tag.active {
       background-color: var(--teal-primary);
       color: #ffffff;
       transform: translateY(-2px);
@@ -742,10 +745,11 @@
       cursor: pointer;
       white-space: nowrap;
       transition: all 0.2s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .filter-btn.active, .filter-btn:hover {
+    .filter-btn.active,
+    .filter-btn:hover {
       background: var(--teal-primary);
       color: #fff;
       border-color: var(--teal-primary);
@@ -799,6 +803,23 @@
       background: var(--teal-light);
       padding: 3px 10px;
       border-radius: 6px;
+    }
+
+    /* Badge khusus untuk "Upcoming" — tampil lebih mencolok */
+    .project-tag.tag-upcoming {
+      background: #f1c40f;
+      color: #1a2523;
+      border: 1px solid #d4a800;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      box-shadow: 0 2px 8px rgba(241, 196, 15, 0.35);
+    }
+
+    body.dark-theme .project-tag.tag-upcoming {
+      background: #f39c12;
+      color: #141417;
+      border-color: #e67e22;
+      box-shadow: 0 2px 12px rgba(243, 156, 18, 0.45);
     }
 
     .contact-card {
@@ -1173,8 +1194,8 @@
       opacity: 0;
       transition: all 0.3s ease;
       z-index: 2000;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       display: flex;
       align-items: center;
       gap: 8px;
@@ -1239,17 +1260,36 @@
     }
 
     @media (min-width: 640px) {
-      .container { max-width: 640px; }
-      .cta-group { flex-direction: row; justify-content: center; }
-      .btn { width: auto; }
+      .container {
+        max-width: 640px;
+      }
+      .cta-group {
+        flex-direction: row;
+        justify-content: center;
+      }
+      .btn {
+        width: auto;
+      }
     }
 
     @media (min-width: 768px) {
-      .container { max-width: 768px; }
-      .hero { padding: 50px 20px; }
-      .hero h1 { font-size: 2.25rem; }
-      .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .project-card { margin-bottom: 0; }
+      .container {
+        max-width: 768px;
+      }
+      .hero {
+        padding: 50px 20px;
+      }
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .project-card {
+        margin-bottom: 0;
+      }
     }
   </style>
 </head>
@@ -1351,7 +1391,7 @@
   <div class="modal-overlay" id="dashboard-modal">
     <div class="modal-card">
       <div class="cms-container">
-        
+
         <!-- Sidebar Menu Left Vertical -->
         <aside class="cms-sidebar">
           <div class="modal-header" style="margin-bottom:0; border-bottom:none; padding-bottom:0;">
@@ -1359,7 +1399,7 @@
             <button class="close-modal" onclick="closeModal('dashboard-modal')"><i class="fa-solid fa-xmark"></i></button>
           </div>
           <hr style="border:none; border-top:1px solid var(--border-cream); margin: 0;">
-          
+
           <div class="admin-tabs">
             <button class="admin-tab active" onclick="switchAdminTab('tab-hero', this)">
               <i class="fa-solid fa-user-gear" style="width:18px;"></i> Profil & Hero
@@ -1655,74 +1695,71 @@
         gradStartRgb: "#E4F1F0",
         gradEndRgb: "#5A9E98"
       },
-      sections: [
-        {
-          id: "sec_1",
-          title: "Pengalaman & Layanan",
-          icon: "fa-solid fa-briefcase",
-          content: "Fokus pada pembuatan desain UI/UX aplikasi mobile, prototyping interaktif, dan sistem desain yang terukur untuk menjamin kepuasan pengguna.",
-          bgColor: "#14201D",
-          textColor: "#FFFFFF"
-        }
-      ],
-      projects: [
-        {
-          id: "p1",
-          title: "Nusantara Flow App",
-          category: "mobile",
-          desc: "Aplikasi manajemen keuangan pribadi berbasis mobile dengan antarmuka yang ramah pengguna.",
-          tags: ["MobileApp", "UIUX"],
-          link: "https://github.com"
-        },
-        {
-          id: "p2",
-          title: "KopiKita Landing",
-          category: "web",
-          desc: "Landing page cepat dan ringan untuk rantai kedai kopi lokal dengan pemesanan langsung.",
-          tags: ["Responsive", "CleanDesign"],
-          link: "https://dribbble.com"
-        },
-        {
-          id: "p3",
-          title: "Pixel Quest Adventure",
-          category: "game",
-          desc: "Game indie platformer 2D bertema petualangan dengan grafis retro piksel estetis.",
-          tags: ["GameDev", "PixelArt"],
-          link: "https://roblox.com"
-        },
-        {
-          id: "p4",
-          title: "NeoBank Mobile Redesign",
-          category: "uiux",
-          desc: "Studi kasus prototipe desain antarmuka perbankan masa depan yang intuitif dan modern.",
-          tags: ["Figma", "UIUXDesign"],
-          link: "https://figma.com"
-        },
-        {
-          id: "p5",
-          title: "Aura AI Photo Generator",
-          category: "ai",
-          desc: "Platform pembuat gambar AI cerdas berbasis web untuk kreator konten digital.",
-          tags: ["AI", "MachineLearning"],
-          link: "https://github.com"
-        },
-        {
-          id: "p6",
-          title: "TaskMaster Productivity",
-          category: "desktop",
-          desc: "Aplikasi manajemen waktu dan tugas harian berbasis desktop untuk meningkatkan fokus kerja.",
-          tags: ["DesktopApp", "Productivity"],
-          link: "https://github.com"
-        },
-        {
-          id: "p7",
-          title: "TokoKita E-Commerce",
-          category: "ecommerce",
-          desc: "Toko online modern berkecepatan tinggi dengan integrasi pembayaran serba cepat.",
-          tags: ["Ecommerce", "WebStore"],
-          link: "https://github.com"
-        }
-      ]
+      sections: [{
+        id: "sec_1",
+        title: "Pengalaman & Layanan",
+        icon: "fa-solid fa-briefcase",
+        content: "Fokus pada pembuatan desain UI/UX aplikasi mobile, prototyping interaktif, dan sistem desain yang terukur untuk menjamin kepuasan pengguna.",
+        bgColor: "#14201D",
+        textColor: "#FFFFFF"
+      }],
+      projects: [{
+        id: "p1",
+        title: "Nusantara Flow App",
+        category: "mobile",
+        desc: "Aplikasi manajemen keuangan pribadi berbasis mobile dengan antarmuka yang ramah pengguna.",
+        tags: ["MobileApp", "UIUX"],
+        link: "https://github.com"
+      }, {
+        id: "p2",
+        title: "KopiKita Landing",
+        category: "web",
+        desc: "Landing page cepat dan ringan untuk rantai kedai kopi lokal dengan pemesanan langsung.",
+        tags: ["Responsive", "CleanDesign"],
+        link: "https://dribbble.com"
+      }, {
+        id: "p3",
+        title: "Pixel Quest Adventure",
+        category: "game",
+        desc: "Game indie platformer 2D bertema petualangan dengan grafis retro piksel estetis.",
+        tags: ["GameDev", "PixelArt"],
+        link: "https://roblox.com"
+      }, {
+        id: "p4",
+        title: "NeoBank Mobile Redesign",
+        category: "uiux",
+        desc: "Studi kasus prototipe desain antarmuka perbankan masa depan yang intuitif dan modern.",
+        tags: ["Figma", "UIUXDesign"],
+        link: "https://figma.com"
+      }, {
+        id: "p5",
+        title: "Aura AI Photo Generator",
+        category: "ai",
+        desc: "Platform pembuat gambar AI cerdas berbasis web untuk kreator konten digital.",
+        tags: ["AI", "MachineLearning"],
+        link: "https://github.com"
+      }, {
+        id: "p6",
+        title: "TaskMaster Productivity",
+        category: "desktop",
+        desc: "Aplikasi manajemen waktu dan tugas harian berbasis desktop untuk meningkatkan fokus kerja.",
+        tags: ["DesktopApp", "Productivity"],
+        link: "https://github.com"
+      }, {
+        id: "p7",
+        title: "Project Database Firebase (Coming Soon P7)",
+        category: "web",
+        desc: "Aplikasi interaktif yang terhubung ke cloud database realtime",
+        tags: ["Firebase", "RealtimeDB", "Upcoming"],
+        link: "#"
+      }, {
+        id: "p8",
+        title: "TokoKita E-Commerce",
+        category: "ecommerce",
+        desc: "Toko online modern berkecepatan tinggi dengan integrasi pembayaran serba cepat.",
+        tags: ["Ecommerce", "WebStore"],
+        link: "https://github.com"
+      }]
     };
 
     const categoryLabels = {
@@ -1769,9 +1806,9 @@
 
     function renderBackground() {
       const isDark = document.body.classList.contains('dark-theme');
-      const overlay = isDark
-        ? 'linear-gradient(rgba(20, 20, 23, 0.92), rgba(20, 20, 23, 0.96))'
-        : 'linear-gradient(rgba(18, 28, 26, 0.65), rgba(18, 28, 26, 0.75))';
+      const overlay = isDark ?
+        'linear-gradient(rgba(20, 20, 23, 0.92), rgba(20, 20, 23, 0.96))' :
+        'linear-gradient(rgba(18, 28, 26, 0.65), rgba(18, 28, 26, 0.75))';
       document.body.style.backgroundImage = `${overlay}, url('${appData.hero.bg}')`;
     }
 
@@ -1782,6 +1819,16 @@
         try {
           const parsed = JSON.parse(saved);
           if (!parsed.sections) parsed.sections = defaultAppData.sections;
+
+          // === MIGRASI: tambahkan proyek p7 dan p8 jika belum ada ===
+          const existingIds = new Set(parsed.projects.map(p => p.id));
+          const defaultProjects = defaultAppData.projects;
+          for (const defProj of defaultProjects) {
+            if (!existingIds.has(defProj.id)) {
+              parsed.projects.push(JSON.parse(JSON.stringify(defProj)));
+            }
+          }
+
           return parsed;
         } catch (e) { console.error(e); }
       }
@@ -1800,7 +1847,7 @@
     function setPreviewDevice(mode) {
       previewDeviceMode = mode;
       const frame = document.getElementById('preview-screen-frame');
-      
+
       document.getElementById('btn-device-mobile').classList.remove('active');
       document.getElementById('btn-device-tablet').classList.remove('active');
       document.getElementById('btn-device-desktop').classList.remove('active');
@@ -1821,7 +1868,6 @@
         icon.className = isFullscreen ? 'fa-solid fa-compress' : 'fa-solid fa-expand';
       }
 
-      // Otomatis berpindah ke mode desktop saat mengaktifkan mode fullscreen
       if (isFullscreen) {
         setPreviewDevice('desktop');
       }
@@ -1829,7 +1875,6 @@
       updateLivePreviewIframe();
     }
 
-    // Tangani tombol ESC untuk keluar dari mode fullscreen preview
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         const container = document.getElementById('preview-viewport-container');
@@ -1848,7 +1893,6 @@
       const iframe = document.getElementById('cms-live-preview-iframe');
       if (!iframe) return;
 
-      // Duplicate HTML content for sandboxed iframe live preview
       const doc = iframe.contentDocument || iframe.contentWindow.document;
       if (!doc) return;
 
@@ -1857,7 +1901,6 @@
       doc.write(htmlContent);
       doc.close();
 
-      // Ensure modals are hidden, but Admin button remains visible in mobile header preview
       setTimeout(() => {
         try {
           const iframeBody = doc.body;
@@ -1867,14 +1910,13 @@
             } else {
               iframeBody.classList.remove('dark-theme');
             }
-            
-            // Clean up admin modals inside live preview frame
+
             const loginModal = doc.getElementById('login-modal');
             if (loginModal) loginModal.remove();
             const dashModal = doc.getElementById('dashboard-modal');
             if (dashModal) dashModal.remove();
           }
-        } catch(e) { console.error('Preview sync error:', e); }
+        } catch (e) { console.error('Preview sync error:', e); }
       }, 50);
     }
 
@@ -1886,24 +1928,21 @@
     }
 
     function renderApp() {
-      // 1. Render Background
       renderBackground();
 
-      // Apply Custom RGB Primary Color dynamically
       if (appData.hero.primaryRgb) {
         document.documentElement.style.setProperty('--teal-primary', appData.hero.primaryRgb);
       } else {
         document.documentElement.style.removeProperty('--teal-primary');
       }
 
-      // 2. Render Hero
-      document.getElementById('logo-text').innerHTML = `<i class="fa-solid fa-leaf" style="color: var(--teal-primary)"></i> ${appData.hero.name}`;
+      document.getElementById('logo-text').innerHTML =
+        `<i class="fa-solid fa-leaf" style="color: var(--teal-primary)"></i> ${appData.hero.name}`;
       document.getElementById('footer-name').innerText = appData.hero.name;
 
       const heroContainer = document.getElementById('about');
       heroContainer.className = `hero ${appData.hero.gradient || 'grad-custom-rgb'}`;
-      
-      // Handle Custom RGB Gradient with Dark Mode High-Contrast Adaptation
+
       if (appData.hero.gradient === 'grad-custom-rgb') {
         const isDark = document.body.classList.contains('dark-theme');
         const start = appData.hero.gradStartRgb || '#E4F1F0';
@@ -1932,13 +1971,9 @@
         </div>
       `;
 
-      // 3. Render Custom Sections
       renderCustomSections();
-
-      // 4. Render Project Filters & Cards
       renderProjectsView();
 
-      // 5. Render Contact
       const contactContainer = document.getElementById('contact-container');
       contactContainer.innerHTML = `
         <h3>Tertarik Bekerja Sama?</h3>
@@ -1949,7 +1984,6 @@
         </div>
       `;
 
-      // Render Admin Lists if active
       renderAdminLists();
     }
 
@@ -1986,37 +2020,42 @@
     }
 
     function renderProjectsView() {
-      // Filter buttons
       const filterContainer = document.getElementById('filter-container');
       const categoryKeys = Object.keys(categoryLabels);
-      
+
       filterContainer.innerHTML = categoryKeys.map(catKey => `
         <button class="filter-btn ${currentFilter === catKey ? 'active' : ''}" onclick="setFilter('${catKey}')">
           ${categoryLabels[catKey]}
         </button>
       `).join('');
 
-      // Project items
       const projectsContainer = document.getElementById('projects-container');
       const filtered = appData.projects.filter(p => currentFilter === 'all' || p.category === currentFilter);
 
       if (filtered.length === 0) {
-        projectsContainer.innerHTML = `<p style="grid-column: 1/-1; color: white; text-align: center; padding: 20px;">Belum ada karya dalam kategori ini.</p>`;
+        projectsContainer.innerHTML =
+          `<p style="grid-column: 1/-1; color: var(--text-muted); text-align: center; padding: 20px;">Belum ada karya dalam kategori ini.</p>`;
         return;
       }
 
       projectsContainer.innerHTML = filtered.map(p => {
         const catLabel = categoryLabels[p.category] || p.category;
+        // Deteksi apakah tag "Upcoming" ada
+        const hasUpcoming = p.tags && p.tags.some(t => t.toLowerCase() === 'upcoming');
+
         return `
         <article class="project-card">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px; flex-wrap: wrap; gap: 6px;">
               <h3 style="margin-bottom:0;">${p.title}</h3>
               <span style="font-size:0.7rem; padding: 2px 8px; border-radius: 12px; background: var(--teal-light); color: var(--teal-primary); font-weight:700;">${catLabel}</span>
             </div>
             <p>${p.desc}</p>
             <div class="project-tags">
-              ${p.tags.map(t => `<span class="project-tag">#${t}</span>`).join('')}
+              ${p.tags.map(t => {
+                const isUpcoming = t.toLowerCase() === 'upcoming';
+                return `<span class="project-tag ${isUpcoming ? 'tag-upcoming' : ''}">#${t}</span>`;
+              }).join('')}
             </div>
           </div>
           <a href="${p.link}" target="_blank" class="btn btn-secondary" style="width: 100%; text-decoration: none;">
@@ -2079,7 +2118,6 @@
     }
 
     function openDashboardModal() {
-      // Fill Form with current data
       document.getElementById('edit-name').value = appData.hero.name;
       document.getElementById('edit-badge').value = appData.hero.badge;
       document.getElementById('edit-gradient').value = appData.hero.gradient || 'grad-custom-rgb';
@@ -2088,7 +2126,6 @@
       document.getElementById('edit-bg').value = appData.hero.bg;
       document.getElementById('edit-email').value = appData.hero.email;
 
-      // RGB Palette Values
       const primaryRgb = appData.hero.primaryRgb || '#5A9E98';
       const gradStartRgb = appData.hero.gradStartRgb || '#E4F1F0';
       const gradEndRgb = appData.hero.gradEndRgb || '#5A9E98';
@@ -2119,8 +2156,7 @@
     function updateRgbLabel(input, labelId) {
       const val = input.value.toUpperCase();
       document.getElementById(labelId).innerText = val;
-      
-      // Live RGB preview updates
+
       if (labelId === 'label-primary-rgb') {
         document.documentElement.style.setProperty('--teal-primary', input.value);
       } else if (labelId === 'label-grad-start-rgb' || labelId === 'label-grad-end-rgb') {
@@ -2128,7 +2164,8 @@
         const end = document.getElementById('edit-grad-end-rgb').value;
         const heroContainer = document.getElementById('about');
         if (document.getElementById('edit-gradient').value === 'grad-custom-rgb') {
-          heroContainer.style.background = `linear-gradient(135deg, ${start} 0%, rgba(255, 253, 249, 0.95) 50%, ${end} 100%)`;
+          heroContainer.style.background =
+            `linear-gradient(135deg, ${start} 0%, rgba(255, 253, 249, 0.95) 50%, ${end} 100%)`;
         }
       }
     }
@@ -2143,7 +2180,6 @@
       appData.hero.bg = document.getElementById('edit-bg').value.trim();
       appData.hero.email = document.getElementById('edit-email').value.trim();
 
-      // Save RGB Palette
       appData.hero.primaryRgb = document.getElementById('edit-primary-rgb').value;
       appData.hero.gradStartRgb = document.getElementById('edit-grad-start-rgb').value;
       appData.hero.gradEndRgb = document.getElementById('edit-grad-end-rgb').value;
@@ -2152,7 +2188,6 @@
       showToast('Profil dan palette warna RGB berhasil diperbarui!');
     }
 
-    // Real-time Input Listeners for Instant Preview Updates
     function attachLiveInputListeners() {
       const liveInputs = [
         'edit-name', 'edit-badge', 'edit-gradient', 'edit-bio', 'edit-pfp', 'edit-bg', 'edit-email',
@@ -2182,11 +2217,11 @@
     }
 
     function renderAdminLists() {
-      // Render Projects List in CMS
       const projList = document.getElementById('admin-projects-list');
       if (projList) {
         if (appData.projects.length === 0) {
-          projList.innerHTML = '<li style="color:var(--text-muted); font-size:0.85rem; padding:10px;">Belum ada proyek. Silakan tambah proyek baru.</li>';
+          projList.innerHTML =
+            '<li style="color:var(--text-muted); font-size:0.85rem; padding:10px;">Belum ada proyek. Silakan tambah proyek baru.</li>';
         } else {
           projList.innerHTML = appData.projects.map(p => `
             <li class="item-row">
@@ -2210,11 +2245,11 @@
         }
       }
 
-      // Render Sections List in CMS
       const secList = document.getElementById('admin-sections-list');
       if (secList) {
         if (!appData.sections || appData.sections.length === 0) {
-          secList.innerHTML = '<li style="color:var(--text-muted); font-size:0.85rem; padding:10px;">Belum ada custom section. Silakan tambah section baru.</li>';
+          secList.innerHTML =
+            '<li style="color:var(--text-muted); font-size:0.85rem; padding:10px;">Belum ada custom section. Silakan tambah section baru.</li>';
         } else {
           secList.innerHTML = appData.sections.map(s => `
             <li class="item-row">
@@ -2239,7 +2274,6 @@
       }
     }
 
-    // Project Form Handlers
     function openAddProjectForm() {
       document.getElementById('proj-id').value = '';
       document.getElementById('proj-title').value = '';
@@ -2318,7 +2352,6 @@
       showToast('Proyek berhasil disimpan!');
     }
 
-    // Section Form Handlers
     function openAddSectionForm() {
       document.getElementById('sec-id').value = '';
       document.getElementById('sec-title').value = '';
@@ -2412,7 +2445,6 @@
       }
     }
 
-    // Utility Helpers
     function copyEmail(email) {
       const tempInput = document.createElement('input');
       tempInput.value = email;
@@ -2439,7 +2471,6 @@
       updateAdminTriggerButton();
       attachLiveInputListeners();
 
-      // Navbar scroll effect & Dynamic Scrollspy
       const sections = document.querySelectorAll('main section[id]');
       const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -2451,7 +2482,6 @@
           header.classList.remove('scrolled');
         }
 
-        // Scrollspy logic
         let currentSection = '';
         const scrollPosition = window.scrollY + 120;
 
