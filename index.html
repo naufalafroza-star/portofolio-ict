@@ -9,6 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <script type="importmap">
+    {
+      "imports": {
+        "firebase/app": "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js",
+        "firebase/firestore": "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"
+      }
+    }
+  </script>
+
   <style>
     :root {
       --bg-cream: #FAF6F0;
@@ -1659,7 +1668,25 @@
 
   <div id="toast" class="toast"><i class="fa-solid fa-circle-check"></i> <span id="toast-text">Berhasil</span></div>
 
-  <script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "firebase/app";
+    import { getFirestore, doc, setDoc, onSnapshot } from "firebase/firestore";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBar2yjdtsScpxqPymuo2dlKXbrUueIUh4",
+      authDomain: "myportofolio-8304b.firebaseapp.com",
+      projectId: "myportofolio-8304b",
+      storageBucket: "myportofolio-8304b.firebasestorage.app",
+      messagingSenderId: "16343145916",
+      appId: "1:16343145916:web:9bd5ced18ff3c477899fb9"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
     // Mobile Navigation Menu Toggle
     function toggleMobileMenu() {
       const menu = document.getElementById('nav-menu-wrapper');
@@ -1773,7 +1800,7 @@
       ecommerce: "E-Commerce"
     };
 
-    let appData = loadAppData();
+    let appData = JSON.parse(JSON.stringify(defaultAppData));
     let currentFilter = 'all';
 
     // Theme Management Functions
@@ -1812,33 +1839,62 @@
       document.body.style.backgroundImage = `${overlay}, url('${appData.hero.bg}')`;
     }
 
-    // Data Store Functions
-    function loadAppData() {
-      const saved = localStorage.getItem('naufal_profile_app_data');
-      if (saved) {
-        try {
-          const parsed = JSON.parse(saved);
-          if (!parsed.sections) parsed.sections = defaultAppData.sections;
+    // Firestore Data Store & Sync Functions
+    function initFirestoreData() {
+      const docRef = doc(db, "portfolio", "app_data");
 
-          // === MIGRASI: tambahkan proyek p7 dan p8 jika belum ada ===
-          const existingIds = new Set(parsed.projects.map(p => p.id));
+      onSnapshot(docRef, async (docSnap) => {
+        if (docSnap.exists()) {
+          const cloudData = docSnap.data();
+          if (!cloudData.sections) cloudData.sections = defaultAppData.sections;
+
+          // === MIGRASI: tambahkan proyek default jika belum ada di data cloud ===
+          const existingIds = new Set((cloudData.projects || []).map(p => p.id));
           const defaultProjects = defaultAppData.projects;
           for (const defProj of defaultProjects) {
             if (!existingIds.has(defProj.id)) {
-              parsed.projects.push(JSON.parse(JSON.stringify(defProj)));
+              if (!cloudData.projects) cloudData.projects = [];
+              cloudData.projects.push(JSON.parse(JSON.stringify(defProj)));
             }
           }
 
-          return parsed;
-        } catch (e) { console.error(e); }
-      }
-      return JSON.parse(JSON.stringify(defaultAppData));
+          appData = cloudData;
+          renderApp();
+          updateLivePreviewIframe();
+        } else {
+          // Dokumen belum ada di Firestore: migrasikan data dari localStorage (jika ada) atau gunakan defaultAppData
+          let initialData = defaultAppData;
+          const localSaved = localStorage.getItem('naufal_profile_app_data');
+          if (localSaved) {
+            try {
+              initialData = JSON.parse(localSaved);
+            } catch (e) {
+              console.error("Local data parse error:", e);
+            }
+          }
+
+          try {
+            await setDoc(docRef, JSON.parse(JSON.stringify(initialData)));
+          } catch (err) {
+            console.warn("Gagal inisialisasi dokumen awal Firestore:", err);
+          }
+        }
+      }, (error) => {
+        console.error("Firestore sync error:", error);
+      });
     }
 
-    function saveAppData() {
-      localStorage.setItem('naufal_profile_app_data', JSON.stringify(appData));
-      renderApp();
-      updateLivePreviewIframe();
+    async function saveAppData() {
+      try {
+        const docRef = doc(db, "portfolio", "app_data");
+        const cleanData = JSON.parse(JSON.stringify(appData));
+        await setDoc(docRef, cleanData);
+        renderApp();
+        updateLivePreviewIframe();
+      } catch (err) {
+        console.error("Error saving to Firestore:", err);
+        showToast("Gagal menyimpan ke cloud: " + err.message);
+      }
     }
 
     let previewThemeIsDark = false;
@@ -1920,9 +1976,9 @@
       }, 50);
     }
 
-    function resetToDefaultData() {
+    async function resetToDefaultData() {
       appData = JSON.parse(JSON.stringify(defaultAppData));
-      saveAppData();
+      await saveAppData();
       showToast('Data berhasil di-reset ke setelan awal!');
       closeModal('dashboard-modal');
     }
@@ -2464,8 +2520,57 @@
       }, 3000);
     }
 
+    // Expose functions to window for inline HTML event handlers (onclick, onsubmit, dll.)
+    Object.assign(window, {
+      toggleMobileMenu,
+      closeMobileMenu,
+      initTheme,
+      toggleTheme,
+      updateThemeIcon,
+      renderBackground,
+      loadAppData: () => appData,
+      saveAppData,
+      setPreviewDevice,
+      toggleFullscreenPreview,
+      togglePreviewTheme,
+      updateLivePreviewIframe,
+      resetToDefaultData,
+      renderApp,
+      renderCustomSections,
+      renderProjectsView,
+      setFilter,
+      checkIsLoggedIn,
+      toggleAdminView,
+      handleLogin,
+      logoutAdmin,
+      updateAdminTriggerButton,
+      openDashboardModal,
+      toggleRgbPaletteVisibility,
+      updateRgbLabel,
+      saveHeroData,
+      attachLiveInputListeners,
+      openModal,
+      closeModal,
+      renderAdminLists,
+      openAddProjectForm,
+      hideProjectForm,
+      editProjectItem,
+      duplicateProjectItem,
+      deleteProjectItem,
+      saveProjectItem,
+      openAddSectionForm,
+      hideSectionForm,
+      editSectionItem,
+      duplicateSectionItem,
+      deleteSectionItem,
+      saveSectionItem,
+      switchAdminTab,
+      copyEmail,
+      showToast
+    });
+
     // Initialize Page
-    window.onload = function() {
+    function initPage() {
       initTheme();
       renderApp();
       updateAdminTriggerButton();
@@ -2476,6 +2581,7 @@
 
       function handleScroll() {
         const header = document.getElementById('navbar');
+        if (!header) return;
         if (window.scrollY > 20) {
           header.classList.add('scrolled');
         } else {
@@ -2503,7 +2609,18 @@
 
       window.addEventListener('scroll', handleScroll);
       handleScroll();
-    };
+
+      // Sinkronisasi data Firestore (hanya di window utama, bukan di preview iframe)
+      if (window.self === window.top) {
+        initFirestoreData();
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', initPage);
+    } else {
+      initPage();
+    }
   </script>
 </body>
 </html>
