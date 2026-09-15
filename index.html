@@ -1846,17 +1846,9 @@
       onSnapshot(docRef, async (docSnap) => {
         if (docSnap.exists()) {
           const cloudData = docSnap.data();
-          if (!cloudData.sections) cloudData.sections = defaultAppData.sections;
-
-          // === MIGRASI: tambahkan proyek default jika belum ada di data cloud ===
-          const existingIds = new Set((cloudData.projects || []).map(p => p.id));
-          const defaultProjects = defaultAppData.projects;
-          for (const defProj of defaultProjects) {
-            if (!existingIds.has(defProj.id)) {
-              if (!cloudData.projects) cloudData.projects = [];
-              cloudData.projects.push(JSON.parse(JSON.stringify(defProj)));
-            }
-          }
+          if (!cloudData.hero) cloudData.hero = defaultAppData.hero;
+          if (!Array.isArray(cloudData.sections)) cloudData.sections = defaultAppData.sections;
+          if (!Array.isArray(cloudData.projects)) cloudData.projects = defaultAppData.projects;
 
           appData = cloudData;
           renderApp();
@@ -2372,7 +2364,7 @@
     }
 
     function deleteProjectItem(id) {
-      appData.projects = appData.projects.filter(p => p.id !== id);
+      appData.projects = appData.projects.filter(p => String(p.id) !== String(id));
       saveAppData();
       showToast('Proyek berhasil dihapus!');
     }
@@ -2451,7 +2443,7 @@
     }
 
     function deleteSectionItem(id) {
-      appData.sections = appData.sections.filter(s => s.id !== id);
+      appData.sections = appData.sections.filter(s => String(s.id) !== String(id));
       saveAppData();
       showToast('Section berhasil dihapus!');
     }
